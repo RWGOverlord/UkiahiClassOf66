@@ -8,9 +8,9 @@ Status legend: `[ ]` open · `[x]` done. Tasks marked _(committee)_ are Erick/co
 
 ## Content — fill the placeholders
 - [x] **Prices and dates** — add the real dinner price, memory book price, and reunion dates (replace the `.placeholder` spans).
-- [ ] **Event schedule** — add Friday/Saturday/Sunday times and locations.
+- [x] **Event schedule** — add Friday/Saturday/Sunday times and locations. _(Sunday dropped per client. Fri: Ice Breaker 4–10 PM, Ukiah Golf Course Club House. Sat: dinner 4–10 PM, Elks Lodge.)_
 - [ ] **Mailing address** — add the committee's check-payment mailing address.
-- [x] **Hotels & RV parks** — add names, addresses, phones, and any room-block codes. _(Added 3 hotels + 3 RV parks with addresses, tap-to-call phones, ratings, and "Committee pick" badges. No room-block codes provided — none listed; confirm with committee if any are negotiated.)_
+- [x] **Hotels & RV parks** — add names, addresses, phones, and any room-block codes. _(Added 3 hotels + 2 RV parks with addresses, tap-to-call phones, ratings, and "Committee pick" badges. No room-block codes provided — none listed; confirm with committee if any are negotiated.)_
 - [ ] **Reunion photos** — add the committee's photos to the photo section.
 - [ ] **Confirm meal names** — verify the three meals (assumed Chicken / Beef / Vegetarian).
 - [ ] **Confirm school colors** — verify Wildcat purple/gold before final styling.
@@ -20,7 +20,7 @@ Status legend: `[ ]` open · `[x]` done. Tasks marked _(committee)_ are Erick/co
 
 ## Payments — Cheddar Up
 - [ ] **Create Cheddar Up collection** — _(committee)_ set up the 4 items + item questions + form per the build sheet in CLAUDE.md.
-- [ ] **Swap in real cart URL** — replace `https://cheddarup.com/c/your-collection` in the markup with the live collection link.
+- [x] **Swap in real cart URL** — replace `https://cheddarup.com/c/your-collection` in the markup with the live collection link. _(Both dinner + memory book buttons now point to https://ukiahi-class-of-66.cheddarup.com)_
 
 ## Launch — hosting & domain
 - [x] **Rename to index.html** — rename `ukiah-class-of-66-mock.html` to `index.html` at repo root so GitHub Pages serves it.

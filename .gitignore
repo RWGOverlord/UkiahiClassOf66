@@ -1,0 +1,7 @@
+# Local / committee working files — never publish to the public repo
+backup cheddar up.pdf
+qr-code.jpg
+*.pdf
+
+# OS cruft
+.DS_Store
