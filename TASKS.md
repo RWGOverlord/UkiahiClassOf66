@@ -10,7 +10,7 @@ Status legend: `[ ]` open · `[x]` done. Tasks marked _(committee)_ are Erick/co
 - [x] **Prices and dates** — add the real dinner price, memory book price, and reunion dates (replace the `.placeholder` spans).
 - [ ] **Event schedule** — add Friday/Saturday/Sunday times and locations.
 - [ ] **Mailing address** — add the committee's check-payment mailing address.
-- [ ] **Hotels & RV parks** — add names, addresses, phones, and any room-block codes.
+- [x] **Hotels & RV parks** — add names, addresses, phones, and any room-block codes. _(Added 3 hotels + 3 RV parks with addresses, tap-to-call phones, ratings, and "Committee pick" badges. No room-block codes provided — none listed; confirm with committee if any are negotiated.)_
 - [ ] **Reunion photos** — add the committee's photos to the photo section.
 - [ ] **Confirm meal names** — verify the three meals (assumed Chicken / Beef / Vegetarian).
 - [ ] **Confirm school colors** — verify Wildcat purple/gold before final styling.

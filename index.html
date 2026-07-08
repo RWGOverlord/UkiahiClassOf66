@@ -261,6 +261,18 @@
     padding:18px 22px;margin:0 0 14px;font-size:19px;
   }
   .info-list strong{color:var(--purple);}
+  .info-list .stay-name{font-size:21px;}
+  .info-list .addr{color:var(--ink-soft);}
+  .info-list .addr a{font-weight:700;white-space:nowrap;}
+  .info-list .note{display:block;margin-top:4px;font-size:17px;color:var(--ink-soft);}
+  .info-group + .info-group{margin-top:30px;}
+  .subhead{font-family:'Fraunces';font-weight:600;font-size:26px;color:var(--purple);margin:0 0 14px;}
+  .pick{
+    display:inline-block;background:var(--gold);color:#2a1908;
+    font-size:14px;font-weight:700;letter-spacing:.03em;
+    padding:2px 12px;border-radius:20px;margin-left:8px;
+    vertical-align:middle;white-space:nowrap;
+  }
 
   /* photos */
   .photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;}
@@ -422,12 +434,50 @@
     <div class="wrap">
       <p class="eyebrow">Where to stay</p>
       <h2>Hotels &amp; RV parks</h2>
-      <p class="lead">A few nearby places to rest your head. Mention the reunion when you book.</p>
-      <ul class="info-list">
-        <li><strong><span class="placeholder">Hotel name</span></strong> — <span class="placeholder">address &amp; phone</span>. Room block code: <span class="placeholder">code</span>.</li>
-        <li><strong><span class="placeholder">Hotel name</span></strong> — <span class="placeholder">address &amp; phone</span>.</li>
-        <li><strong><span class="placeholder">RV park name</span></strong> — <span class="placeholder">address &amp; phone</span>.</li>
-      </ul>
+      <p class="lead">A few nearby places to rest your head. Mention the reunion when you book — and call ahead to confirm rates and availability.</p>
+
+      <div class="info-group">
+        <h3 class="subhead">Hotels</h3>
+        <p class="lead" style="margin-bottom:16px;">The newest hotels sit together just off Airport Park Blvd, about 5&ndash;7 minutes south of town.</p>
+        <ul class="info-list">
+          <li>
+            <strong class="stay-name">Holiday Inn Express &amp; Suites Ukiah</strong><span class="pick">Committee pick</span>
+            <p class="addr">1270 Airport Park Blvd · <a href="tel:+17074621514">(707) 462-1514</a> · 4.6★</p>
+            <span class="note">Newest and highest-rated of the group. Free breakfast, pet-friendly, and EV charging.</span>
+          </li>
+          <li>
+            <strong class="stay-name">Hampton Inn Ukiah</strong>
+            <p class="addr">1160 Airport Park Blvd · <a href="tel:+17074626555">(707) 462-6555</a> · 4.3★</p>
+            <span class="note">Spacious rooms, pool and hot tub, reliable.</span>
+          </li>
+          <li>
+            <strong class="stay-name">Fairfield by Marriott Ukiah</strong>
+            <p class="addr">1140 Airport Park Blvd · <a href="tel:+17074633600">(707) 463-3600</a> · 4.0★</p>
+            <span class="note">Clean, recently renovated, standard Marriott.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="info-group">
+        <h3 class="subhead">RV parks</h3>
+        <ul class="info-list">
+          <li>
+            <strong class="stay-name">Fairgrounds RV Park</strong><span class="pick">Committee pick</span>
+            <p class="addr">Redwood Empire Fairgrounds · 1055 N State St · <a href="tel:+17074632667">(707) 463-2667</a> · 4.2★</p>
+            <span class="note">Best-rated and most central. Full hookups (50-amp, water, sewer), pull-throughs, and easy Highway 101 access.</span>
+          </li>
+          <li>
+            <strong class="stay-name">Ukiah Mobile Home &amp; RV Park</strong>
+            <p class="addr">4951 N State St · <a href="tel:+17073808798">(707) 380-8798</a> · 3.8★</p>
+            <span class="note">North of town. Office hours are limited (Thursday and Friday only), so please call ahead.</span>
+          </li>
+          <li>
+            <strong class="stay-name">Blue Lakes Village</strong>
+            <p class="addr">5178 CA-20, Upper Lake · <a href="tel:+17073484895">(707) 348-4895</a> · 4.2★</p>
+            <span class="note">A nicer park, but about 25 minutes east toward Lake County — a scenic drive rather than a quick one.</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 
