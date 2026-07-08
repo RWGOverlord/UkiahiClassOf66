@@ -7,7 +7,7 @@ Status legend: `[ ]` open · `[x]` done. Tasks marked _(committee)_ are Erick/co
 ---
 
 ## Content — fill the placeholders
-- [ ] **Prices and dates** — add the real dinner price, memory book price, and reunion dates (replace the `.placeholder` spans).
+- [x] **Prices and dates** — add the real dinner price, memory book price, and reunion dates (replace the `.placeholder` spans).
 - [ ] **Event schedule** — add Friday/Saturday/Sunday times and locations.
 - [ ] **Mailing address** — add the committee's check-payment mailing address.
 - [ ] **Hotels & RV parks** — add names, addresses, phones, and any room-block codes.
@@ -20,7 +20,7 @@ Status legend: `[ ]` open · `[x]` done. Tasks marked _(committee)_ are Erick/co
 - [ ] **Swap in real cart URL** — replace `https://cheddarup.com/c/your-collection` in the markup with the live collection link.
 
 ## Launch — hosting & domain
-- [ ] **Rename to index.html** — rename `ukiah-class-of-66-mock.html` to `index.html` at repo root so GitHub Pages serves it.
-- [ ] **Register domain** — _(committee)_ buy bare domain under UkiahiClassof66@gmail.com, prepay 2–3 yrs, auto-renew on.
+- [x] **Rename to index.html** — rename `ukiah-class-of-66-mock.html` to `index.html` at repo root so GitHub Pages serves it.
+- [x] **Register domain** — _(committee)_ buy bare domain under UkiahiClassof66@gmail.com, prepay 2–3 yrs, auto-renew on.
 - [ ] **Connect DNS** — point the domain at GitHub Pages (A/CNAME records) and confirm the site resolves.
 - [ ] **Final review pass** — fresh auditor-lens check: all placeholders filled, links work, mobile legibility holds.
