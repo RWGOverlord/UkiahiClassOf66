@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ukiah High School Class of 1966 — Reunion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#faf6ee;
+    --card:#ffffff;
+    --ink:#241c2e;
+    --ink-soft:#4a4153;
+    --purple:#451a6b;
+    --purple-deep:#33134f;
+    --plum:#6b4a86;
+    --gold:#c2912e;
+    --gold-light:#e6c878;
+    --line:#e4dccd;
+    --paypal:#0070ba;
+    --paypal-hover:#005a96;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Mulish',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:20px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:var(--purple);}
+
+  .skip{position:absolute;left:-999px;top:0;background:var(--purple);color:#fff;padding:12px 18px;z-index:200;border-radius:0 0 8px 0;}
+  .skip:focus{left:0;}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:100;
+    background:var(--purple-deep);
+    border-bottom:3px solid var(--gold);
+  }
+  .nav-inner{
+    max-width:1000px;margin:0 auto;
+    display:flex;flex-wrap:wrap;justify-content:center;gap:4px;
+    padding:8px 12px;
+  }
+  nav a{
+    color:#f3ecf7;text-decoration:none;
+    font-weight:600;font-size:18px;
+    padding:10px 16px;border-radius:8px;
+    display:inline-block;
+  }
+  nav a:hover,nav a:focus{background:var(--plum);color:#fff;}
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    background:
+      radial-gradient(circle at 80% 18%, rgba(230,200,120,.18), transparent 55%),
+      linear-gradient(160deg,var(--purple) 0%,var(--purple-deep) 100%);
+    color:#fff;text-align:center;
+    padding:54px 22px 60px;
+  }
+  .hero .school{
+    font-family:'Mulish';font-weight:600;
+    letter-spacing:.16em;text-transform:uppercase;
+    font-size:20px;color:var(--gold-light);margin:0 0 6px;
+  }
+  .hero .year{
+    font-family:'Fraunces';font-weight:600;
+    font-size:clamp(68px,18vw,128px);
+    line-height:.92;margin:4px 0 2px;
+    color:var(--gold-light);
+  }
+  .hero .class-of{
+    font-family:'Fraunces';font-weight:500;font-style:italic;
+    font-size:clamp(26px,6vw,38px);margin:0 0 22px;color:#fff;
+  }
+  .hero .occasion{
+    font-size:24px;font-weight:700;margin:0 0 4px;
+  }
+  .hero .dates{
+    font-size:22px;color:#efe4f6;margin:0 0 30px;
+  }
+  .placeholder{
+    background:rgba(230,200,120,.16);
+    border:1px dashed var(--gold-light);
+    border-radius:6px;padding:1px 8px;font-weight:600;
+  }
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-block;border:none;cursor:pointer;
+    font-family:'Mulish';font-weight:700;font-size:21px;
+    padding:18px 34px;border-radius:12px;text-decoration:none;
+    min-height:60px;line-height:1.2;
+  }
+  .btn-primary{background:var(--gold);color:#2a1908;box-shadow:0 4px 0 #9c7320;}
+  .btn-primary:hover,.btn-primary:focus{background:var(--gold-light);}
+  .btn-pay{
+    background:var(--paypal);color:#fff;width:100%;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    box-shadow:0 4px 0 #004a7c;
+  }
+  .btn-pay:hover,.btn-pay:focus{background:var(--paypal-hover);}
+  .btn-pay svg{flex:none;}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:52px 22px;scroll-margin-top:120px;}
+  .wrap{max-width:880px;margin:0 auto;}
+  section:nth-of-type(even){background:#f3ecdf;}
+
+  h2{
+    font-family:'Fraunces';font-weight:600;
+    font-size:clamp(32px,6vw,44px);line-height:1.1;
+    color:var(--purple);margin:0 0 6px;
+  }
+  .eyebrow{
+    font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    font-size:16px;color:var(--gold);margin:0 0 4px;
+  }
+  .lead{font-size:21px;color:var(--ink-soft);margin:0 0 28px;max-width:680px;}
+
+  /* schedule */
+  .day{
+    background:var(--card);border:1px solid var(--line);
+    border-left:6px solid var(--gold);border-radius:12px;
+    padding:22px 24px;margin:0 0 16px;
+  }
+  .day h3{font-family:'Fraunces';font-size:26px;color:var(--purple);margin:0 0 10px;}
+  .day p{margin:6px 0;font-size:19px;}
+  .day .time{font-weight:700;color:var(--plum);}
+
+  /* pay cards */
+  .pay-grid{display:grid;grid-template-columns:1fr;gap:18px;}
+  .pay-card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:24px;
+  }
+  .pay-card h3{font-family:'Fraunces';font-size:26px;color:var(--purple);margin:0 0 4px;}
+  .pay-card .price{font-size:30px;font-weight:700;color:var(--ink);margin:0 0 4px;}
+  .pay-card p{margin:0 0 18px;font-size:18px;color:var(--ink-soft);}
+  .pay-note{
+    margin-top:24px;font-size:17px;color:var(--ink-soft);
+    background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 20px;
+  }
+
+  /* dinner / meal selection */
+  .dinner-card{
+    background:var(--card);border:1px solid var(--line);
+    border-top:6px solid var(--gold);border-radius:14px;
+    padding:26px 24px;margin:0 0 18px;
+  }
+  .dinner-card h3{font-family:'Fraunces';font-size:28px;color:var(--purple);margin:0 0 4px;}
+  .dinner-sub{font-size:19px;color:var(--ink-soft);margin:0 0 22px;}
+  .meal-list{display:grid;grid-template-columns:1fr;gap:14px;}
+  .meal{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 20px;
+  }
+  .meal-name{font-family:'Fraunces';font-size:24px;font-weight:600;color:var(--ink);}
+  .meal .btn-pay{width:auto;min-width:230px;}
+  .meal-note{
+    margin:20px 0 0;font-size:18px;color:var(--ink-soft);
+    background:#f3ecdf;border-radius:10px;padding:16px 20px;
+  }
+  .meal-note strong{color:var(--purple);}
+  @media(min-width:620px){
+    .meal-list{grid-template-columns:repeat(3,1fr);}
+    .meal{flex-direction:column;align-items:stretch;text-align:center;}
+    .meal .btn-pay{width:100%;min-width:0;}
+  }
+
+  /* reservation options — three clear cards */
+  .reserve-grid{display:grid;grid-template-columns:1fr;gap:18px;}
+  .reserve-option{
+    background:var(--card);border:1px solid var(--line);
+    border-top:6px solid var(--gold);border-radius:14px;
+    padding:26px 24px;display:flex;flex-direction:column;
+  }
+  .reserve-option h3{font-family:'Fraunces';font-size:26px;color:var(--purple);margin:0 0 6px;}
+  .reserve-option .price{font-size:30px;font-weight:700;color:var(--ink);margin:0 0 4px;}
+  .reserve-option .opt-desc{font-size:18px;color:var(--ink-soft);margin:0 0 22px;}
+  .reserve-option .btn{margin-top:auto;width:100%;}
+  .btn-reserve{
+    background:var(--purple);color:#fff;box-shadow:0 4px 0 var(--purple-deep);
+    display:flex;align-items:center;justify-content:center;gap:10px;
+  }
+  .btn-reserve:hover,.btn-reserve:focus{background:var(--plum);}
+  @media(min-width:620px){
+    .reserve-grid{grid-template-columns:repeat(2,1fr);}
+  }
+
+  /* hotels / lists */
+  .info-list{list-style:none;padding:0;margin:0;}
+  .info-list li{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:18px 22px;margin:0 0 14px;font-size:19px;
+  }
+  .info-list strong{color:var(--purple);}
+
+  /* photos */
+  .photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;}
+  .photo{
+    aspect-ratio:4/3;border-radius:12px;border:1px solid var(--line);
+    background:linear-gradient(135deg,#efe7da,#e3d6c2);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--plum);font-weight:600;font-size:16px;text-align:center;padding:10px;
+  }
+
+  /* memorial */
+  .memorial{
+    font-size:22px;color:var(--ink);max-width:680px;
+    border-left:4px solid var(--gold);padding-left:22px;font-style:italic;
+  }
+
+  /* contact */
+  .contact-box{
+    background:var(--purple);color:#fff;border-radius:16px;
+    padding:34px 28px;text-align:center;
+  }
+  .contact-box h2{color:#fff;}
+  .contact-box .email{
+    display:inline-block;font-family:'Fraunces';font-weight:600;
+    font-size:clamp(22px,5vw,30px);color:var(--gold-light);
+    margin:12px 0 6px;word-break:break-word;
+  }
+  .contact-box a{color:var(--gold-light);}
+
+  footer{
+    background:var(--purple-deep);color:#cdbfd9;
+    text-align:center;padding:28px 22px;font-size:16px;
+  }
+
+  @media(min-width:620px){
+    .pay-grid{grid-template-columns:1fr 1fr;}
+    .hero-actions{display:flex;justify-content:center;}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<nav aria-label="Main">
+  <div class="nav-inner">
+    <a href="#welcome">Welcome</a>
+    <a href="#events">Events</a>
+    <a href="#reserve">Reserve &amp; Pay</a>
+    <a href="#hotels">Hotels</a>
+    <a href="#photos">Photos</a>
+    <a href="#memory">In Memory</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="school">Ukiah High School</p>
+  <p class="year">1966</p>
+  <p class="class-of">Class of Sixty-Six</p>
+  <p class="occasion">60th Reunion</p>
+  <p class="dates"><span class="placeholder">Dates to be confirmed</span></p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="#reserve">Reserve your spot</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- WELCOME -->
+  <section id="welcome">
+    <div class="wrap">
+      <p class="eyebrow">Welcome back</p>
+      <h2>We'd love to see you again</h2>
+      <p class="lead">After sixty years, the Class of 1966 is getting together once more. Here you'll find everything you need — the schedule, where to stay, and how to reserve your seat. If you've moved since our last reunion, please send us your new address so we can keep you in the loop.</p>
+      <a class="btn btn-primary" href="#reserve">Reserve your spot</a>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section id="events">
+    <div class="wrap">
+      <p class="eyebrow">The weekend</p>
+      <h2>Reunion events</h2>
+      <p class="lead">Three days together. Come to one event or all of them.</p>
+
+      <div class="day">
+        <h3>Friday — <span class="placeholder">Date</span></h3>
+        <p><span class="time">Evening:</span> Welcome mixer &amp; check-in</p>
+        <p><span class="placeholder">Location and details to be added</span></p>
+      </div>
+      <div class="day">
+        <h3>Saturday — <span class="placeholder">Date</span></h3>
+        <p><span class="time">Afternoon:</span> Campus visit &amp; group photo</p>
+        <p><span class="time">Evening:</span> Main event dinner</p>
+        <p><span class="placeholder">Location and details to be added</span></p>
+      </div>
+      <div class="day">
+        <h3>Sunday — <span class="placeholder">Date</span></h3>
+        <p><span class="time">Morning:</span> Farewell breakfast</p>
+        <p><span class="placeholder">Location and details to be added</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVE & PAY -->
+  <section id="reserve">
+    <div class="wrap">
+      <p class="eyebrow">Reserve &amp; pay</p>
+      <h2>Reserve your spot</h2>
+      <p class="lead">Everything's in one place. Choose your dinner, add a guest, and add a memory book — then check out once and see your total before you pay. Use a credit card, Apple Pay, Google Pay, or your bank account. No account to create.</p>
+
+      <div class="reserve-grid">
+        <div class="reserve-option">
+          <h3>Main event dinner</h3>
+          <p class="price">$<span class="placeholder">00</span> <span style="font-size:18px;font-weight:500;">per person</span></p>
+          <p class="opt-desc">Saturday evening dinner and program. Pick your meal and add a guest on the next page.</p>
+          <a class="btn btn-reserve" href="https://cheddarup.com/c/your-collection" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            Reserve dinner
+          </a>
+        </div>
+
+        <div class="reserve-option">
+          <h3>Reunion memory book</h3>
+          <p class="price">$<span class="placeholder">00</span></p>
+          <p class="opt-desc">Keepsake book of classmates, then and now.</p>
+          <a class="btn btn-reserve" href="https://cheddarup.com/c/your-collection" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            Add a memory book
+          </a>
+        </div>
+
+        <div class="reserve-option">
+          <h3>Can't pay online?</h3>
+          <p class="price" style="font-size:24px;">Mail a check</p>
+          <p class="opt-desc">Or email us and we'll reserve your dinner and meal over the phone.</p>
+          <a class="btn btn-reserve" href="#contact">See mailing details</a>
+        </div>
+      </div>
+
+      <p class="pay-note"><strong>Prefer to pay another way?</strong> Mail a check to <span class="placeholder">committee mailing address</span>, or email <strong>UkiahiClassof66@gmail.com</strong> and we'll reserve your dinner and meal choice over the phone.</p>
+    </div>
+  </section>
+
+  <!-- HOTELS -->
+  <section id="hotels">
+    <div class="wrap">
+      <p class="eyebrow">Where to stay</p>
+      <h2>Hotels &amp; RV parks</h2>
+      <p class="lead">A few nearby places to rest your head. Mention the reunion when you book.</p>
+      <ul class="info-list">
+        <li><strong><span class="placeholder">Hotel name</span></strong> — <span class="placeholder">address &amp; phone</span>. Room block code: <span class="placeholder">code</span>.</li>
+        <li><strong><span class="placeholder">Hotel name</span></strong> — <span class="placeholder">address &amp; phone</span>.</li>
+        <li><strong><span class="placeholder">RV park name</span></strong> — <span class="placeholder">address &amp; phone</span>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PHOTOS -->
+  <section id="photos">
+    <div class="wrap">
+      <p class="eyebrow">Memories</p>
+      <h2>Reunion photos</h2>
+      <p class="lead">From reunions past — and we'll add this year's after the weekend.</p>
+      <div class="photo-grid">
+        <div class="photo">Photo</div>
+        <div class="photo">Photo</div>
+        <div class="photo">Photo</div>
+        <div class="photo">Photo</div>
+        <div class="photo">Photo</div>
+        <div class="photo">Photo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IN MEMORY -->
+  <section id="memory">
+    <div class="wrap">
+      <p class="eyebrow">Remembering</p>
+      <h2>In memory of all our friends</h2>
+      <p class="lead memorial">To the classmates who walked these halls beside us and are no longer here — you are not forgotten. Sixty years on, we still carry your friendship, your laughter, and your place in the Class of 1966. As we gather again, we hold you close, and we leave a seat at the table for every friend we've lost along the way.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-box">
+        <h2>Stay in touch</h2>
+        <p style="font-size:20px;margin:0 0 4px;">Moved recently? Have a story or photo to share? Reach the reunion committee:</p>
+        <a class="email" href="mailto:UkiahiClassof66@gmail.com">UkiahiClassof66@gmail.com</a>
+        <p style="font-size:18px;color:#e7dcef;margin:14px 0 0;">We check email often and we're glad to help with anything by phone too.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Ukiah High School Class of 1966 — 60th Reunion. All rights reserved.
+</footer>
+
+</body>
+</html>
