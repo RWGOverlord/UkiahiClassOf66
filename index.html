@@ -61,6 +61,61 @@
   }
   nav a:hover,nav a:focus{background:var(--plum);color:#fff;}
 
+  /* mobile bar + slide-down panel — hidden on desktop */
+  .nav-bar{display:none;}
+  .nav-close{display:none;}
+
+  @media (max-width:767px){
+    .nav-bar{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      max-width:1000px;margin:0 auto;padding:6px 12px;min-height:56px;
+    }
+    .nav-brand{
+      font-family:'Fraunces';font-weight:600;font-size:19px;color:var(--gold-light);
+      flex:1 1 auto;min-width:0;
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    }
+    .nav-bar-actions{display:flex;align-items:center;gap:8px;flex:0 0 auto;}
+    .nav-reserve{
+      background:var(--gold);color:#2a1908;
+      font-family:'Mulish';font-weight:700;font-size:16px;text-decoration:none;
+      padding:10px 14px;border-radius:8px;min-height:44px;white-space:nowrap;
+      display:flex;align-items:center;
+    }
+    .nav-reserve:hover,.nav-reserve:focus{background:var(--gold-light);color:#2a1908;}
+    .nav-toggle{
+      display:flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap;
+      background:var(--plum);color:#fff;border:1px solid var(--gold-light);
+      font-family:'Mulish';font-weight:700;font-size:16px;
+      padding:9px 13px;border-radius:8px;min-height:44px;
+    }
+    .nav-toggle:hover,.nav-toggle:focus{background:#7c579b;}
+    .nav-toggle svg{flex:none;}
+
+    /* the shared link row becomes a hidden slide-down panel */
+    .nav-inner{
+      display:none;flex-direction:column;gap:0;padding:0;
+      border-top:3px solid var(--gold);
+      max-height:calc(100vh - 62px);overflow-y:auto;
+    }
+    nav.open .nav-inner{display:flex;animation:navSlide .18s ease-out;}
+    .nav-close{
+      display:flex;align-items:center;justify-content:center;align-self:flex-end;
+      width:56px;height:56px;cursor:pointer;
+      background:transparent;border:none;color:#f3ecf7;
+    }
+    .nav-inner a{
+      display:flex;align-items:center;width:100%;min-height:56px;
+      padding:14px 20px;border-radius:0;font-size:21px;
+      border-top:1px solid var(--gold);
+    }
+    .nav-inner a:last-child{border-bottom:1px solid var(--gold);}
+  }
+  @keyframes navSlide{from{transform:translateY(-8px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+  @media (prefers-reduced-motion: reduce){
+    nav.open .nav-inner{animation:none;}
+  }
+
   /* ---------- HERO ---------- */
   header.hero{
     background:
@@ -251,7 +306,23 @@
 <a class="skip" href="#main">Skip to content</a>
 
 <nav aria-label="Main">
-  <div class="nav-inner">
+  <!-- Mobile bar (< 768px): brand + Reserve + labeled Menu button -->
+  <div class="nav-bar">
+    <span class="nav-brand">Class of 1966</span>
+    <div class="nav-bar-actions">
+      <a class="nav-reserve" href="#reserve">Reserve</a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        Menu
+      </button>
+    </div>
+  </div>
+
+  <!-- Shared links: horizontal row on desktop, slide-down panel on mobile -->
+  <div class="nav-inner" id="nav-menu">
+    <button type="button" class="nav-close" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>
+    </button>
     <a href="#welcome">Welcome</a>
     <a href="#events">Events</a>
     <a href="#reserve">Reserve &amp; Pay</a>
@@ -403,6 +474,49 @@
 <footer>
   Ukiah High School Class of 1966 — 60th Reunion. All rights reserved.
 </footer>
+
+<script>
+(function(){
+  var nav = document.querySelector('nav');
+  var toggle = nav && nav.querySelector('.nav-toggle');
+  var closeBtn = nav && nav.querySelector('.nav-close');
+  if(!nav || !toggle) return;
+
+  function isOpen(){ return nav.classList.contains('open'); }
+
+  function openMenu(){
+    nav.classList.add('open');
+    toggle.setAttribute('aria-expanded','true');
+    if(closeBtn) closeBtn.focus();
+  }
+  function closeMenu(returnFocus){
+    if(!isOpen()) return;
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+    if(returnFocus) toggle.focus();
+  }
+
+  toggle.addEventListener('click', function(){
+    isOpen() ? closeMenu(true) : openMenu();
+  });
+  if(closeBtn) closeBtn.addEventListener('click', function(){ closeMenu(true); });
+
+  // Any nav link closes the menu (native anchor scroll then runs); no-op on desktop where it's never open.
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ closeMenu(false); });
+  });
+
+  // Esc closes and returns focus to the Menu button.
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && isOpen()) closeMenu(true);
+  });
+
+  // Tapping outside the nav closes the panel.
+  document.addEventListener('click', function(e){
+    if(isOpen() && !nav.contains(e.target)) closeMenu(false);
+  });
+})();
+</script>
 
 </body>
 </html>

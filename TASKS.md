@@ -15,6 +15,9 @@ Status legend: `[ ]` open · `[x]` done. Tasks marked _(committee)_ are Erick/co
 - [ ] **Confirm meal names** — verify the three meals (assumed Chicken / Beef / Vegetarian).
 - [ ] **Confirm school colors** — verify Wildcat purple/gold before final styling.
 
+## Enhancements — UX
+- [x] **Responsive mobile nav** — desktop keeps the full link row; mobile gets a slim sticky bar (brand + Reserve + labeled Menu) opening a large slide-down panel. Closes on link/X/outside-tap/Esc; `aria-expanded`, focus management, and reduced-motion handled.
+
 ## Payments — Cheddar Up
 - [ ] **Create Cheddar Up collection** — _(committee)_ set up the 4 items + item questions + form per the build sheet in CLAUDE.md.
 - [ ] **Swap in real cart URL** — replace `https://cheddarup.com/c/your-collection` in the markup with the live collection link.
