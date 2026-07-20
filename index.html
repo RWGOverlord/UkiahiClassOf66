@@ -118,9 +118,14 @@
 
   /* ---------- HERO ---------- */
   header.hero{
-    background:
+    background-color:var(--purple-deep);
+    background-image:
       radial-gradient(circle at 80% 18%, rgba(230,200,120,.18), transparent 55%),
-      linear-gradient(160deg,var(--purple) 0%,var(--purple-deep) 100%);
+      linear-gradient(160deg, rgba(69,26,107,.86) 0%, rgba(51,19,79,.93) 100%),
+      url('Main_Building.jpg');
+    background-size:auto, auto, cover;
+    background-position:center, center, center 32%;
+    background-repeat:no-repeat;
     color:#fff;text-align:center;
     padding:54px 22px 60px;
   }
@@ -183,6 +188,20 @@
     font-size:16px;color:var(--gold);margin:0 0 4px;
   }
   .lead{font-size:21px;color:var(--ink-soft);margin:0 0 28px;max-width:680px;}
+
+  /* welcome heading + mascot */
+  .welcome-head{
+    display:flex;align-items:center;gap:24px;
+    justify-content:space-between;flex-wrap:wrap;margin:0 0 22px;
+  }
+  .welcome-head .welcome-title{margin:0;}
+  .welcome-head .welcome-title .eyebrow{margin:0 0 4px;}
+  .welcome-head .welcome-title h2{margin:0;}
+  .mascot{width:160px;height:auto;flex:none;}
+  @media(max-width:600px){
+    .welcome-head{gap:14px;}
+    .mascot{width:108px;}
+  }
 
   /* schedule */
   .day{
@@ -361,8 +380,13 @@
   <!-- WELCOME -->
   <section id="welcome">
     <div class="wrap">
-      <p class="eyebrow">Welcome back</p>
-      <h2>We'd love to see you again</h2>
+      <div class="welcome-head">
+        <div class="welcome-title">
+          <p class="eyebrow">Welcome back</p>
+          <h2>We'd love to see you again</h2>
+        </div>
+        <img class="mascot" src="mascot.png" alt="Ukiah High School Wildcats mascot" width="160" height="160">
+      </div>
       <p class="lead">After sixty years, the Class of 1966 is getting together once more. Here you'll find everything you need — the schedule, where to stay, and how to reserve your seat. If you've moved since our last reunion, please send us your new address so we can keep you in the loop.</p>
       <a class="btn btn-primary" href="#reserve">Reserve your spot</a>
     </div>
