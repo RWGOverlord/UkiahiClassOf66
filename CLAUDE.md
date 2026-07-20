@@ -38,9 +38,10 @@ Static reunion website for the Ukiah High School Class of 1966 committee. Built 
 ### Cheddar Up collection structure (build sheet, set up separately by committee)
 - Free tier allows **5 items / 1 form per page**. Plan uses 4 items:
   1. Dinner — Chicken
-  2. Dinner — Beef
-  3. Dinner — Vegetarian
+  2. Dinner — Pork
+  3. Dinner — Vegetarian Pasta
   4. Reunion Memory Book
+  - Meal names **confirmed** by the 2026 official invite (Chicken / Pork / Vegetarian Pasta). Earlier "Beef / Vegetarian" was a wrong assumption — do not revert.
   - (Quilt raffle was **dropped** — do not add it back.)
 - Each dinner item gets an **item question**: "Full name of person attending" (open text). This captures meal counts (per item) + attendee names.
 - One page-level **form** for purchaser info + **guest/plus-one name** + dietary allergies. The guest-name field is the catch-all for same-meal couples (qty 2 → item question only grabs one name).
@@ -74,8 +75,8 @@ Everything below is a placeholder in the markup (look for dashed-outline `.place
 - [ ] Real **Cheddar Up collection URL** (replace placeholder)
 - [ ] **Hotels & RV parks** list (names, addresses, phones, room-block codes)
 - [ ] **Photos** (committee has them)
-- [ ] Confirm **meal names** (assumed Chicken / Beef / Vegetarian)
-- [ ] Confirm **school colors** (assumed Wildcat purple/gold)
+- [x] Confirm **meal names** — CONFIRMED by 2026 invite: Chicken / Pork / Vegetarian Pasta
+- [x] Confirm **school colors** — CONFIRMED by 2026 invite crest: Wildcat purple/gold
 
 ## Guardrails — do NOT
 - Do not add a framework, build step, or backend. Keep it static.

@@ -12,8 +12,8 @@ Status legend: `[ ]` open · `[x]` done. Tasks marked _(committee)_ are Erick/co
 - [ ] **Mailing address** — add the committee's check-payment mailing address.
 - [x] **Hotels & RV parks** — add names, addresses, phones, and any room-block codes. _(Added 3 hotels + 2 RV parks with addresses, tap-to-call phones, ratings, and "Committee pick" badges. No room-block codes provided — none listed; confirm with committee if any are negotiated.)_
 - [ ] **Reunion photos** — add the committee's photos to the photo section.
-- [ ] **Confirm meal names** — verify the three meals (assumed Chicken / Beef / Vegetarian).
-- [ ] **Confirm school colors** — verify Wildcat purple/gold before final styling.
+- [x] **Confirm meal names** — CONFIRMED by 2026 invite: Chicken / Pork / Vegetarian Pasta (was wrongly assumed Beef/Vegetarian). Update the Cheddar Up items to match.
+- [x] **Confirm school colors** — CONFIRMED by 2026 invite crest: Wildcat purple/gold.
 
 ## Enhancements — UX
 - [x] **Responsive mobile nav** — desktop keeps the full link row; mobile gets a slim sticky bar (brand + Reserve + labeled Menu) opening a large slide-down panel. Closes on link/X/outside-tap/Esc; `aria-expanded`, focus management, and reduced-motion handled.
