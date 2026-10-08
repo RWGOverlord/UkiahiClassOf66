@@ -2,6 +2,10 @@
 backup cheddar up.pdf
 qr-code.jpg
 *.pdf
+# ...except the public memory books offered for free download
+!Ukiah-Class-of-66-Memory-Book-*.pdf
+# Raw phone video (the site uses the converted reunion-2026.mp4)
+Video.mov
 
 # OS cruft
 .DS_Store

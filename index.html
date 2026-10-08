@@ -298,13 +298,10 @@
     vertical-align:middle;white-space:nowrap;
   }
 
-  /* photos */
-  .photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;}
-  .photo{
-    aspect-ratio:4/3;border-radius:12px;border:1px solid var(--line);
-    background:linear-gradient(135deg,#efe7da,#e3d6c2);
-    display:flex;align-items:center;justify-content:center;
-    color:var(--plum);font-weight:600;font-size:16px;text-align:center;padding:10px;
+  /* reunion video (phone-shot, portrait) */
+  .reunion-video{
+    display:block;width:100%;max-width:360px;height:auto;margin:0 auto;
+    background:#000;border-radius:12px;border:1px solid var(--line);
   }
 
   /* memorial */
@@ -346,7 +343,7 @@
   <div class="nav-bar">
     <span class="nav-brand">Class of 1966</span>
     <div class="nav-bar-actions">
-      <a class="nav-reserve" href="#reserve">Reserve</a>
+      <a class="nav-reserve" href="#books">Memory Book</a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         Menu
@@ -361,9 +358,9 @@
     </button>
     <a href="#welcome">Welcome</a>
     <a href="#events">Events</a>
-    <a href="#reserve">Reserve &amp; Pay</a>
+    <a href="#books">Memory Books</a>
     <a href="#hotels">Hotels</a>
-    <a href="#photos">Photos</a>
+    <a href="#photos">Video</a>
     <a href="#memory">In Memory</a>
     <a href="#contact">Contact</a>
   </div>
@@ -376,7 +373,7 @@
   <p class="occasion">60th Reunion</p>
   <p class="dates">September 18&ndash;19, 2026</p>
   <div class="hero-actions">
-    <a class="btn btn-primary" href="#reserve">Reserve your spot</a>
+    <a class="btn btn-primary" href="#books">Get the free memory book</a>
   </div>
 </header>
 
@@ -387,13 +384,13 @@
     <div class="wrap">
       <div class="welcome-head">
         <div class="welcome-title">
-          <p class="eyebrow">Welcome back</p>
-          <h2>We'd love to see you again</h2>
+          <p class="eyebrow">Thank you</p>
+          <h2>What a weekend it was</h2>
         </div>
         <img class="mascot" src="mascot.png" alt="Ukiah High School Wildcats mascot" width="160" height="160">
       </div>
-      <p class="lead">After sixty years, the Class of 1966 is getting together once more. Here you'll find everything you need — the schedule, where to stay, and how to reserve your seat. If you've moved since our last reunion, please send us your new address so we can keep you in the loop.</p>
-      <a class="btn btn-primary" href="#reserve">Reserve your spot</a>
+      <p class="lead">Sixty years on, the Class of 1966 got together once more — thank you to everyone who came. Below you'll find a video from the reunion and our memory books, free to download. If you've moved, please send us your new address so we can keep you in the loop.</p>
+      <a class="btn btn-primary" href="#books">Get the free memory book</a>
     </div>
   </section>
 
@@ -402,7 +399,7 @@
     <div class="wrap">
       <p class="eyebrow">The weekend</p>
       <h2>Reunion events</h2>
-      <p class="lead">Two days together. Come to one event or all of them.</p>
+      <p class="lead">Two days together. Thank you to everyone who joined us.</p>
 
       <div class="day">
         <h3>Friday — September 18, 2026</h3>
@@ -417,36 +414,32 @@
     </div>
   </section>
 
-  <!-- RESERVE & PAY -->
-  <section id="reserve">
+  <!-- MEMORY BOOKS (replaced Reserve & Pay after the 2026 reunion; ticket sales closed) -->
+  <section id="books">
     <div class="wrap">
-      <p class="eyebrow">Reserve &amp; pay</p>
-      <h2>Reserve your spot</h2>
-      <p class="lead">Everything's in one place. Choose your dinner, add a guest, and add a memory book — then check out once and see your total before you pay. Use a credit card, Apple Pay, Google Pay, or your bank account. No account to create.</p>
+      <p class="eyebrow">Free to download</p>
+      <h2>Memory books</h2>
+      <p class="lead">Classmates, then and now. Both books are free — tap a button to open one, then save or print it from your browser.</p>
 
       <div class="reserve-grid">
         <div class="reserve-option">
-          <h3>Reunion dinner</h3>
-          <p class="price">$50 <span style="font-size:18px;font-weight:500;">per person</span></p>
-          <p class="opt-desc">Saturday evening dinner and program. Pick your meal and add a guest on the next page.</p>
-          <a class="btn btn-reserve" href="https://ukiahi-class-of-66.cheddarup.com" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-            Reserve dinner
+          <h3>2026 memory book</h3>
+          <p class="opt-desc">From our 60th reunion. 22 pages.</p>
+          <a class="btn btn-reserve" href="Ukiah-Class-of-66-Memory-Book-2026.pdf" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Open the 2026 book
           </a>
         </div>
 
         <div class="reserve-option">
-          <h3>Reunion memory book</h3>
-          <p class="price">$20 <span style="font-size:18px;font-weight:500;">printed</span></p>
-          <p class="opt-desc">Keepsake book of classmates, then and now. Printed copy is $20; a digital PDF is free.</p>
-          <a class="btn btn-reserve" href="https://ukiahi-class-of-66.cheddarup.com" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-            Add a memory book
+          <h3>2016 memory book</h3>
+          <p class="opt-desc">From our 50th reunion. 57 pages. This is a large file, so it may take a minute to open on a phone.</p>
+          <a class="btn btn-reserve" href="Ukiah-Class-of-66-Memory-Book-2016.pdf" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Open the 2016 book
           </a>
         </div>
       </div>
-
-      <p class="pay-note">Prefer to pay by check or cash? Choose that option at checkout — we'll show you where to mail a check, and cash can be handled in person.</p>
     </div>
   </section>
 
@@ -497,20 +490,16 @@
     </div>
   </section>
 
-  <!-- PHOTOS -->
+  <!-- REUNION VIDEO (the #photos section; no photos were supplied) -->
   <section id="photos">
     <div class="wrap">
       <p class="eyebrow">Memories</p>
-      <h2>Reunion photos</h2>
-      <p class="lead">From reunions past — and we'll add this year's after the weekend.</p>
-      <div class="photo-grid">
-        <div class="photo">Photo</div>
-        <div class="photo">Photo</div>
-        <div class="photo">Photo</div>
-        <div class="photo">Photo</div>
-        <div class="photo">Photo</div>
-        <div class="photo">Photo</div>
-      </div>
+      <h2>Reunion video</h2>
+      <p class="lead">A few moments from our 60th reunion on September 19, 2026. Press play to watch — it's about three minutes long, with sound.</p>
+      <video class="reunion-video" controls preload="metadata" playsinline poster="reunion-2026-poster.jpg" width="320" height="568">
+        <source src="reunion-2026.mp4" type="video/mp4">
+        Your browser can't play this video. <a href="reunion-2026.mp4">Download the video</a> instead.
+      </video>
     </div>
   </section>
 

@@ -11,9 +11,13 @@ Status legend: `[ ]` open · `[x]` done. Tasks marked _(committee)_ are Erick/co
 - [x] **Event schedule** — add Friday/Saturday/Sunday times and locations. _(Sunday dropped per client. Fri: Ice Breaker 4–10 PM, Ukiah Golf Course Club House. Sat: dinner 4–10 PM, Elks Lodge.)_
 - [ ] **Mailing address** — add the committee's check-payment mailing address.
 - [x] **Hotels & RV parks** — add names, addresses, phones, and any room-block codes. _(Added 3 hotels + 2 RV parks with addresses, tap-to-call phones, ratings, and "Committee pick" badges. No room-block codes provided — none listed; confirm with committee if any are negotiated.)_
-- [ ] **Reunion photos** — add the committee's photos to the photo section.
+- [x] **Reunion photos** — add the committee's photos to the photo section. _(No photos supplied; per client the section now shows the 2026 reunion video instead.)_
 - [x] **Confirm meal names** — CONFIRMED by 2026 invite: Chicken / Pork / Vegetarian Pasta (was wrongly assumed Beef/Vegetarian). Update the Cheddar Up items to match.
 - [x] **Confirm school colors** — CONFIRMED by 2026 invite crest: Wildcat purple/gold.
+
+## Post-reunion (Oct 2026)
+- [x] **Close ticket sales** — Reserve & Pay section removed; replaced with free memory book downloads (2026 + 2016 PDFs). Nav/hero/welcome reworded to past tense.
+- [x] **Reunion video** — phone video converted to `reunion-2026.mp4` (H.264, fast-start, metadata stripped) with a poster frame; shown in the `#photos` section.
 
 ## Enhancements — UX
 - [x] **Responsive mobile nav** — desktop keeps the full link row; mobile gets a slim sticky bar (brand + Reserve + labeled Menu) opening a large slide-down panel. Closes on link/X/outside-tap/Esc; `aria-expanded`, focus management, and reduced-motion handled.
